@@ -95,7 +95,7 @@
               <h3 class="fnt-sawarabi-mincho">ニュース</h3>
               <p class="btn-cus2 fnt-cormorant-garamond"><a href="#" target="_blank">see more</a></p>
             </div>
-            <div class="feed">
+            <div class="feed" id="news">
               <div class="item">
                 <p class="photo"><a href="#" target="_blank"><img src="shared/img/top/news_img1.jpg" alt="news"></a></p>
                 <div class="text">
@@ -133,7 +133,7 @@
               <h3 class="fnt-sawarabi-mincho">ブログ</h3>
               <p class="btn-cus2 fnt-cormorant-garamond"><a href="#" target="_blank">see more</a></p>
             </div>
-            <div class="feed">
+            <div class="feed" id="blog">
               <div class="item">
                 <p class="photo"><a href="#" target="_blank"><img src="shared/img/top/news_img1.jpg" alt="news"></a></p>
                 <div class="text">
@@ -225,7 +225,7 @@ function fixedHeader() {
 }
 </script>
 <script>
-  var feedURL = "https://tuoitre.vn/rss/du-lich.rss";
+  var feedURL = "https://vnexpress.net/rss/du-lich.rss";
   $.ajax({
     type: 'GET',
     url: "https://api.rss2json.com/v1/api.json?rss_url=" + feedURL,
@@ -240,15 +240,41 @@ function fixedHeader() {
           rssTpl += '<div class="text">';
           rssTpl += '<p class="date fnt-cormorant-garamond">'+ result.items[index].pubDate+' - News</p>';
           rssTpl += '<dl>';
-          rssTpl += '<dt class="title fnt-sawarabi-mincho"><a href="'+ result.items[index].link+'" target="_blank">'+ result.items[index].title+'</a></dt>';
-          rssTpl += '<dd class="desc">'+ result.items[index].description+'…</dd>';
+          rssTpl += '<dt class="title fnt-sawarabi-mincho"><a href="'+ result.items[index].link+'" target="_blank">'+ result.items[index].title.split(/\s+/).slice(0,10).join(" ") +'</a></dt>';
+          rssTpl += '<dd class="desc">'+ result.items[index].description.split(/\s+/).slice(0,20).join(" ")+'…</dd>';
           rssTpl += '</dl>';
           rssTpl += '</div>';
           rssTpl += '</div>';
         }
       });
-      $(".feed").html(rssTpl);
-      $(".feed .desc a").remove();
+      $("#news").html(rssTpl);
+      $("#news .desc a").remove();
+    }
+  });
+  var feedURL2 = "https://tuoitre.vn/rss/xe.rss";
+  $.ajax({
+    type: 'GET',
+    url: "https://api.rss2json.com/v1/api.json?rss_url=" + feedURL2,
+    dataType: 'jsonp',
+    success: function(result) {
+      var rssTpl = "";
+      $.each(result.items , function( index, value ) {
+        if(index < 3)
+        {
+          rssTpl += '<div class="item">';
+          rssTpl += '<p class="photo"><a href="'+ result.items[index].link+'" target="_blank"><img src="'+ result.items[index].thumbnail+'" alt="news"></a></p>';
+          rssTpl += '<div class="text">';
+          rssTpl += '<p class="date fnt-cormorant-garamond">'+ result.items[index].pubDate+' - News</p>';
+          rssTpl += '<dl>';
+          rssTpl += '<dt class="title fnt-sawarabi-mincho"><a href="'+ result.items[index].link+'" target="_blank">'+ result.items[index].title.split(/\s+/).slice(0,10).join(" ")+'</a></dt>';
+          rssTpl += '<dd class="desc">'+ result.items[index].description.split(/\s+/).slice(0,30).join(" ")+'…</dd>';
+          rssTpl += '</dl>';
+          rssTpl += '</div>';
+          rssTpl += '</div>';
+        }
+      });
+      $("#blog").html(rssTpl);
+      $("#blog .desc a").remove();
     }
   });
   </script>

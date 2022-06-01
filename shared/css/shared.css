@@ -110,7 +110,7 @@ header .toggle-button {
   height: 15px;
   align-items: center;
   margin: 0 auto;
-  padding: 24px 10px 11px 10px;
+  padding: 24px 10px 11px 25px;
 }
 .menu-open header .toggle-button:after {
   content: '';
@@ -156,6 +156,7 @@ header .toggle-button .button:after {
 header .toggle-button.active {
   background: transparent;
   width: 30px;
+  padding: 24px 10px 11px 10px;
 }
 header .toggle-button.active .button {
   background: transparent;
@@ -179,9 +180,6 @@ header .toggle-button.active .close {
   transition-delay: .3s;
   opacity: 1;
 }
-header #key {
-	
-}
 header .nav-fixed {
   position: relative;
   top: 0;
@@ -191,46 +189,231 @@ header .nav-fixed {
   z-index: 2;
   background: #fff;
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 0 28px 0;
 	min-height: 20px;
 }
 header .nav-fixed.fixed {
   position: fixed;
 }
-input[type=text] {
-  width: 100%;
-  padding: .4rem .4rem .4rem .2rem;
-  box-sizing: border-box;
+header{
+  z-index: 9;
 }
-select {
+header .header{
+  max-width: 1388px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+header #key{
+  max-width: 1388px;
+  margin: 0 auto;
+  background: url("../img/top/key.jpg")no-repeat center top;
+  background-size: cover;
+  height: 690px;
+}
+header .nav {
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.16em;
+  font-weight: bold;
+  margin: auto 0;
+}
+
+header .nav li {
+  margin: 0 32px 0 0;
+  display: inline-block;
+}
+
+header .nav li:hover {
+  opacity: 0.6;
+}
+
+header .nav li:hover a {
+  text-decoration: none;
+}
+
+header .nav .active {
+  opacity: 0.6;
+}
+header .btn-cus{
+  width: 200px;
+  margin: 0 0 0 12px;
+}
+.btn-cus{
+  border: 1px solid #222;
+  position: relative;
+  font-size: 13px;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.btn-cus:before{
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 1px;
+  background: #222;
+  margin: auto 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.btn-cus a{
   display: block;
-  width: 100%;
-  padding: .4rem .4rem .4rem .5rem;
-  -moz-padding-start: calc(0.75rem - 3px);
-  background-color: #fff;
-  background-image: url("../img/shared/download.svg");
-  background-repeat: no-repeat;
-  background-position: right .75rem center;
-  background-size: 16px 12px;
-  border: 1px solid #ddd;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
-footer {
-
+.btn-cus a:hover{
+  text-decoration: none;
 }
-/*=============================================
-===============================================
-===============================================
-*************** responsive header ************
-===============================================
-===============================================
-*=============================================*/
-/*@media screen and (max-width: $width-wrap - 1px) and (min-width: $width-sp) {	*/
-@media only screen and (max-width: 999px) {
-
+.btn-cus:hover{
+  opacity: 0.6;
+}
+.btn-cus2{
+  border-bottom: 1px solid #707070;
+  position: relative;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  height: 24px;
+  text-transform: uppercase;
+  background: url("../img/common/arrow.png")no-repeat center right;
+  width: 120px;
+  margin: auto 0;
+}
+.btn-cus2 a:hover{
+  text-decoration: none;
+}
+.btn-cus2:hover{
+  opacity: 0.6;
+}
+.btn-scroll{
+  position:absolute;
+  bottom: 0;
+  right: calc(50% - 670px);
+}
+footer .set1{
+  position: relative;
+  color: #fff;
+  padding: 72px 0 13px 0;
+}
+footer .set1:before{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: calc(50% - 630px);
+  bottom: -60px;
+  background: #222;
+  z-index: 1;
+}
+footer .set1 .wrap{
+  position: relative;
+  z-index: 2;
+}
+footer .set1 .nav{
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  flex-wrap: wrap;
+  column-gap: 60px;
+  width: 490px;
+}
+footer .set1 .nav li{
+  font-size: 14px;
+  line-height: 38px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+footer .set1 .nav li a:hover{
+  text-decoration: none;
+}
+footer .set1 .nav li a span{
+  width: 120px;
+  display: block;
+}
+footer .set1 .nav li a span:hover{
+  opacity: 0.6;
+}
+footer .set1 .nav li:nth-child(1) a span{
+  width: 80px;
+}
+footer .set1 .nav li:nth-child(2) a span{
+  width: 80px;
+}
+footer .set1 .nav li:nth-child(2){
+  order: 4;
+}
+footer .set1 .nav li:nth-child(3){
+  order: 2;
+}
+footer .set1 .nav li:nth-child(4){
+  order: 5;
+}
+footer .set1 .nav li:last-child{
+  margin: 0;
+  order: 3;
+}
+footer .set2{
+  background: #333333;
+  color: #fff;
+  padding: 90px 0 30px 0;
+  position: relative;
+}
+footer .set2 .btn-cus{
+  border:1px solid #fff;
+  width: 518px;
+  height: 62px;
+  line-height: 62px;
+  margin: 0 100px 0 0;
+  position:absolute;
+  top: -172px;
+  right: 0;
+  z-index: 3;
+}
+footer .set2 .btn-cus:before{
+  background: #fff;
+}
+footer .set2 .social{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin: 9px 0 0 72px;
+  width: 52px;
+  justify-content: space-between;
+  line-height: 1;
+}
+footer .set2 address{
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  margin: 7px -25px 0 0;
+}
+@media only screen and (max-width: 1200px) {
+  header .nav{
+    letter-spacing: 0.1em;
+  }
+  header .nav li{
+    margin: 0 10px 0 0;
+  }
+  header .btn-cus{
+    width: 180px;
+    margin: 0 0 0 10px;
+  }
+  footer .set1 .nav{
+    column-gap: 40px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .hamberger-btn {
@@ -341,9 +524,6 @@ footer {
   }
 }
 @media only screen and (max-width: 767px) {
-
-}
-@media only screen and (max-width: 767px) {
   .fl {
     float: none;
   }
@@ -353,13 +533,117 @@ footer {
   .df{
     display: block;
   }
-  header #key {
-
-  }
   header .nav-fixed {
     position: fixed;
   }
-  footer {
+  header #key{
+    max-width: 1388px;
+    margin: 0 auto;
+    background: url("../img/top/key.jpg")no-repeat center top;
+    background-size: cover;
+    height: auto;
+  }
+  header .logo{
+    background: #fff;
+    text-align: left;
+  }
+  header .logo.fixed{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  header .logo img{
+    width: 180px;
+    margin: 3%;
+  }
+  header .nav{
+    margin: 35px 0;
+  }
+  header .nav li {
+    margin: 10px 0;
+    display: block;
+    letter-spacing: 0.16em;
+  }
+  header .btn-cus {
+      width: 50%;
+      margin: 0 auto;
+  }
+  footer .set1{
+    padding: 8vw 3% 0 3%;
+  }
+  footer .set1:before{
+    right: 13%;
+    bottom: -8vw;
+  }
+  footer .set1 .nav{
+    column-gap: 60px;
+    width: 100%;
+  }
+  footer .set1 .nav li{
+    line-height: 28px;
+  }
+  footer .set1 .nav li a span{
+    width: 120px;
+    display: block;
+  }
+  footer .set1 .nav li:nth-child(1) a span{
+    width: 80px;
+  }
+  footer .set1 .nav li:nth-child(2) a span{
+    width: 80px;
+  }
+  footer .set1 .nav li:nth-child(2){
+    order: 3;
+  }
+  footer .set1 .nav li:nth-child(3){
+    order: 2;
+  }
+  footer .set1 .nav li:nth-child(4){
+    order: 4;
+  }
+  footer .set1 .nav li:last-child{
+    margin: 0;
+    order: 5;
+  }
+  footer .set2{
+    padding: 15vw 0 10vw 0;
+  }
+  footer .set2 .btn-cus{
+    width: 92%;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 auto 10vw auto;
+    position:relative;
+    top:0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  footer .set2 .btn-cus a {
+    line-height: 1.6;
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+  footer .set2 .logo{
+    width: 180px;
+    margin: 0 auto 5vw auto;
+  }
+  footer .set2 .social{
+    margin: 0 auto 5vw auto;
+    width: 60px;
+  }
+  footer .set2 .social li img{
+    width: auto;
+    height: 26px;
+  }
+  footer .set2 address{
+    margin: 0;
+    text-align: center;
   }
 }
 @media (max-width: 767px) {
@@ -394,8 +678,6 @@ footer {
 #pagetop:hover {
   opacity: 0.9;
 }
-#socialbuttons {}
-address {}
 address span {
   display: block;
 }
