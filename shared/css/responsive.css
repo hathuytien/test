@@ -1,0 +1,44 @@
+/* Scss Document */
+/*=============================================
+ ******************* RESPONSIVE ****************
+ *=============================================*/
+@media only screen and (max-width: 1200px) {
+  html .wrap {
+    padding: 0 3%;
+    width: auto;
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html {
+    min-width: auto;
+  }
+  html a:hover {
+    text-decoration: none;
+  }
+  html img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+  html .wrap {
+    padding: 0 3%;
+    width: auto;
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html #socialbuttons .social-line {
+    width: 92px;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 320px) {
+  html.responsive {
+    min-width: 320px !important;
+  }
+}
+/*=============================================
+ *************** responsive common ************
+ *=============================================*/
+/*# sourceMappingURL=responsive.css.map */

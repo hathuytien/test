@@ -1,0 +1,454 @@
+@charset "UTF-8";
+/* Scss Document */
+/*=============================================
+ * body
+ *=============================================*/
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  letter-spacing: 0.1em;
+  color: #1F1F1F;
+  background-color: #fff;
+  min-width: inherit;
+  min-height: inherit;
+  font-weight: 400;
+  font-style: normal;
+}
+.fnt-cormorant-garamond{
+  font-family: 'Cormorant Garamond', serif;
+}
+.fnt-sawarabi-mincho{
+  font-family: 'Sawarabi Mincho', serif;
+}
+/*=============================================
+ ******************* main **********************
+ *=============================================*/
+main {
+  clear: both;
+  width: 100%;
+  position: relative;
+}
+body {
+  overflow-x: hidden;
+}
+.wrap {
+  margin: 0 auto;
+  width: 1200px;
+  position: relative;
+}
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    -webkit-transform: translate3d(0, 20%, 0);
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    -webkit-transform: translate3d(0, 20%, 0);
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    -webkit-transform: translate3d(20px,0,0);
+    opacity: 0;
+    transform: translate3d(20px,0,0);
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    -webkit-transform: translate3d(20px,0,0);
+    opacity: 0;
+    transform: translate3d(20px,0,0);
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+/*=============================================
+ ******************* nav-fixed ****************
+ *=============================================*/
+header .toggle-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  width: 15px;
+  height: 15px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 24px 10px 11px 10px;
+}
+.menu-open header .toggle-button:after {
+  content: '';
+}
+header .toggle-button .button {
+  height: 2px;
+  width: 15px;
+  background-color: #272727;
+  position: relative;
+  -webkit-transition: all 0ms .2s;
+  transition: all 0ms .2s;
+  display: block;
+  border-radius: 2px;
+}
+header .toggle-button .button:before {
+  content: "";
+  position: absolute;
+  left: -50%;
+  width: 150%;
+  height: 100%;
+  top: 7px;
+  background: #272727;
+  border-radius: 2px;
+  -webkit-transition: bottom 0.2s 0.2s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.2s 0.2s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.2s 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.2s 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+header .toggle-button .button:after {
+  content: "";
+  position: absolute;
+  left: -70%;
+  width: 170%;
+  height: 100%;
+  bottom: 7px;
+  background: #272727;
+  border-radius: 2px;
+  -webkit-transition: bottom 0.2s 0.2s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.2s 0.2s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.2s 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.2s 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+header .toggle-button.active {
+  background: transparent;
+  width: 30px;
+}
+header .toggle-button.active .button {
+  background: transparent;
+  width: 30px;
+}
+header .toggle-button.active .button:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: rotate(45deg);
+  transition: top 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.2s 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+header .toggle-button.active .button:after {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: rotate(-45deg);
+  transition: bottom 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.2s 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+header .toggle-button.active .close {
+  transition-delay: .3s;
+  opacity: 1;
+}
+header #key {
+	
+}
+header .nav-fixed {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: .5s all;
+  width: 100%;
+  z-index: 2;
+  background: #fff;
+  text-align: center;
+  padding: 40px 0;
+	min-height: 20px;
+}
+header .nav-fixed.fixed {
+  position: fixed;
+}
+input[type=text] {
+  width: 100%;
+  padding: .4rem .4rem .4rem .2rem;
+  box-sizing: border-box;
+}
+select {
+  display: block;
+  width: 100%;
+  padding: .4rem .4rem .4rem .5rem;
+  -moz-padding-start: calc(0.75rem - 3px);
+  background-color: #fff;
+  background-image: url("../img/shared/download.svg");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #ddd;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+footer {
+
+}
+/*=============================================
+===============================================
+===============================================
+*************** responsive header ************
+===============================================
+===============================================
+*=============================================*/
+/*@media screen and (max-width: $width-wrap - 1px) and (min-width: $width-sp) {	*/
+@media only screen and (max-width: 999px) {
+
+}
+@media only screen and (max-width: 767px) {
+  .hamberger-btn {
+    position: fixed;
+    top: 17px;
+    right: 2%;
+    width: 50px;
+    height: 50px;
+    display: block;
+    z-index: 201;
+    transition: all 0.4s ease;
+    overflow: hidden;
+  }
+  .hamberger-btn::after {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "MENU";
+    text-align: center;
+    font-size: 10px;
+    line-height: 20px;
+  }
+  .hamberger-btn span {
+    width: 35px;
+    height: 2px;
+    position: absolute;
+    top: 35%;
+    transform: translate3D(-50%, -50%, 0);
+    left: 50%;
+    background: #000;
+  }
+  .hamberger-btn span::before, .hamberger-btn span::after {
+    width: 35px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    background: #000;
+    content: "";
+  }
+  .hamberger-btn span::after {
+    top: -8px;
+  }
+  .hamberger-btn span::before {
+    top: 8px;
+  }
+  .nav-header .sub-nav::before {
+    display: none;
+  }
+  .menu-open .hamberger-btn {
+    transform: rotate(360deg);
+  }
+  .menu-open .hamberger-btn span {
+    transform: rotate(140deg) translateX(20px);
+    top: 5px;
+    left: 46%;
+  }
+  .menu-open .hamberger-btn span::after {
+    transform: rotate(-105deg) translateX(0px);
+    top: 0;
+  }
+  .menu-open .hamberger-btn::after {
+    content: "CLOSE";
+  }
+  .menu-open .hamberger-btn span::before {
+    opacity: 0;
+  }
+  .nav-header {
+    width: 100%;
+    height: 100vh;
+    background: #FFF;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: left 0.5s ease;
+    opacity: 1;
+  }
+  .menu-open .nav-header {
+    left: 0%;
+    visibility: visible;
+    overflow: auto;
+  }
+  header .mobile-nav {
+    position: fixed;
+    top: 0;
+    padding-top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 80px;
+    z-index: 990;
+    background: rgba(26, 17, 12, 0.8);
+    opacity: 0;
+    -webkit-transition: .5s all;
+    transition: .5s all;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .menu-open header .mobile-nav {
+    background: #fff;
+    opacity: 1;
+    pointer-events: initial;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    padding: 0 0 80px 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+
+}
+@media only screen and (max-width: 767px) {
+  .fl {
+    float: none;
+  }
+  .fr {
+    float: none;
+  }
+  .df{
+    display: block;
+  }
+  header #key {
+
+  }
+  header .nav-fixed {
+    position: fixed;
+  }
+  footer {
+  }
+}
+@media (max-width: 767px) {
+  .pc {
+    display: none !important;
+  }
+  .sp {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) {
+  .pc {
+    display: block !important;
+  }
+  .sp {
+    display: none !important;
+  }
+}
+/*=============================================
+ ******************* footer *******************
+ *=============================================*/
+/*=============================================
+***************** copyright ******************
+*=============================================*/
+#pagetop {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+}
+#pagetop:hover {
+  opacity: 0.9;
+}
+#socialbuttons {}
+address {}
+address span {
+  display: block;
+}
+@media only screen and (max-width: 767px) {
+  #pagetop {
+    bottom: 40px;
+    right: 20px;
+    width: 10px;
+    z-index: 98;
+  }
+}
+/*=============================================
+===============================================
+===============================================
+*************** css for iphone 5 ************
+===============================================
+===============================================
+*=============================================*/
+/* iPhone X */
+@media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+
+}
+/* iPhone XR */
+@media only screen and (min-device-width: 414px) and (min-device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+ 
+}
+/* iPhone 11 */
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2), @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3), @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+  
+}
+/*=============================================
+===============================================
+===============================================
+***************** css for ie 11 ***************
+===============================================
+===============================================
+*=============================================*/
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  p.btn img:hover, .btn-over img, .over-img img, img.over, img:not(.btn):not(.non-over), button img {
+    transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    transition: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+  }
+  p.bnr img:hover, .bnr-over img, .over-img img, img.over, img:not(.bnr):not(.non-over), button img, p.logo img:hover {
+    transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    transition: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+  }
+}
