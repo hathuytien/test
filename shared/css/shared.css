@@ -733,4 +733,10 @@ address span {
     -moz-transition: none !important;
     -webkit-transition: none !important;
   }
+  header .nav{
+    line-height: 44px;
+  }
+  footer .set1 .nav li{
+    margin: 0 60px 0 0;
+  }
 }

@@ -104,6 +104,7 @@
   line-height: 70px;
   letter-spacing: 0.1em;
   font-weight: 500;
+  margin: 0 auto 0 0;
 }
 #sec2 .df .blog .row:before{
   background: url("../img/top/blog.png")no-repeat left top;
